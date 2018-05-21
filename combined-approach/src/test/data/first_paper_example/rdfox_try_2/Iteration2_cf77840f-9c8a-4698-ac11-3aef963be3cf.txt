@@ -1,0 +1,3 @@
+<http://www.bike-example.ontology#r>(?x, <Unnamed_1>) :- <http://www.bike-example.ontology#B>(?x) .
+<http://www.bike-example.ontology#t>(?x, <Unnamed_2>) :- <http://www.bike-example.ontology#C>(?x), <http://www.bike-example.ontology#t>(?x, <Unnamed_0>) .
+<INV_RS_4>(?x, <Unnamed_2>) :- <http://www.bike-example.ontology#C>(?x), <INV_RS_4>(?x, <Unnamed_0>) .

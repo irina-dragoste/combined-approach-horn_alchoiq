@@ -1,0 +1,1 @@
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, <Unnamed_11>) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#GraduateStudent>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, <Unnamed_1>) .

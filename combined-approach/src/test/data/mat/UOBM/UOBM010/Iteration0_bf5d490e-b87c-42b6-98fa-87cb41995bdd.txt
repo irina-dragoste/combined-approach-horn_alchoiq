@@ -1,0 +1,421 @@
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallLover>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#TeachingAssistant>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#StatisticsClass>(?x) .
+<http://FreshClass11>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Civil_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Materials_ScienceClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#University>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationResearch>(?x, ?y) .
+<http://FreshClass15>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballClass>(?y) .
+<http://FreshClass19>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#WomanCollege>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Schedule>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#listedCourse>(?x, ?y) .
+<http://www.w3.org/2002/07/owl#sameAs>(?y, ?z) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?y, ?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?z), <http://www.w3.org/2002/07/owl#NamedIndividual>(?z) .
+<http://www.w3.org/2002/07/owl#NamedIndividual>(?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?y, ?x), <http://www.w3.org/2002/07/owl#NamedIndividual>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Work>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Research>(?x) .
+<http://FreshClass18>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingClass>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#HistoryClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#TennisFan>(?x) :- <http://FreshClass14>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#PhysicsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Marine_ScienceClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Article>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#JournalArticle>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Dean>(?x) :- <http://FreshClass5>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Faculty>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Faculty>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Lecturer>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#MusicsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Program>(?x) .
+<http://FreshClass10>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallClass>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#AssistantProfessor>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Insterest>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Music>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#AnthropologyClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#listedCourse>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#ResearchGroup>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#researchProject>(?x, ?y) .
+<http://FreshClass14>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#TennisClass>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Insterest>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Director>(?x) :- <http://FreshClass7>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAdvisedBy>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Woman>(?x) .
+<http://FreshClass4>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Manual>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://minCardFreshClass2>(?x), <http://minCardFreshClass3>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#PeopleWithHobby>(?x) :- <http://FreshClass11>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationAuthor>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#MathematicsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#orgPublication>(?x, ?y) .
+<http://FreshClass0>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#PhilosophyClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#UndergraduateStudent>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingFan>(?x) :- <http://FreshClass18>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliateOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Article>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#TechnicalReport>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://FreshClass26>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#UndergraduateStudent>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#orgPublication>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#College>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#VisitingProfessor>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Employee>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationDate>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliatedOrganizationOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Book>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#SupportingStaff>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SystemsStaff>(?x) .
+<http://FreshClass7>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Program>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Work>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?x) .
+<http://FreshClass9>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallClass>(?y) .
+<http://FreshClass1>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Biomedical_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SportsFan>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#subOrganizationOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#AcademicSubject>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Employee>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SupportingStaff>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#NonScienceStudent>(?x) :- <http://FreshClass20>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Software>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#NonScienceStudent>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Electrical_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallFan>(?x) .
+<http://FreshClass8>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#AcademicSubject>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Faculty>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) .
+<http://www.w3.org/2002/07/owl#sameAs>(?y, ?z) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?y, ?x), <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?z), <http://www.w3.org/2002/07/owl#NamedIndividual>(?z) .
+<http://www.w3.org/2002/07/owl#NamedIndividual>(?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?y, ?x), <http://www.w3.org/2002/07/owl#NamedIndividual>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#UndergraduateStudent>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#WomanCollege>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Man>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Article>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ConferencePaper>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#AcademicSubject>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballLover>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballFan>(?x) :- <http://FreshClass15>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#SportsFan>(?x) :- <http://FreshClass4>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://FreshClass12>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#WomanCollege>(?x) :- <http://FreshClass19>(?x), <http://FreshClass2>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#College>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <http://FreshClass8>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#AstronomyClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#TennisClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationAuthor>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Institute>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ReligionsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Software>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareDocumentation>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingFan>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ScienceStudent>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isAdvisedBy>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Dean>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#GraduateCourse>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#GraduateStudent>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#FullProfessor>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesClass>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://minCardFreshClass1>(?x), <http://minCardFreshClass3>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Asian_ArtsClass>(?x) .
+<http://FreshClass20>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#NonScienceStudent>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#TeachingAssistant>(?x) .
+<http://FreshClass16>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Article>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SportsLover>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Employee>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Faculty>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Petroleuml_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Software>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareVersion>(?x, ?y) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://FreshClass20>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingLover>(?x) :- <http://FreshClass17>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://FreshClass19>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Man>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Media_Arts_And_ciencesClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Research>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#researchProject>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#University>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#LinguisticsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Chemical_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#PsychologyClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliateOf>(?x, ?y) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Man>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Woman>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Aeronautical_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BiologyClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Employee>(?x) :- <http://FreshClass12>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Latin_ArtsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ResearchAssistant>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#EnglishClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#University>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#GeosciencesClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ArchitectureClass>(?x) .
+<http://FreshClass13>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballClass>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#SportsLover>(?x) :- <http://FreshClass1>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#University>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#TeachingAssistant>(?x) :- <http://FreshClass0>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallLover>(?x) :- <http://FreshClass9>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliatedOrganizationOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Theatre_and_DanceClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#TennisFan>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Computer_ScienceClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Department>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#tenured>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Mechanical_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareDocumentation>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballLover>(?x) :- <http://FreshClass13>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://FreshClass17>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingClass>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Modern_LanguagesClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#AcademicSubject>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://minCardFreshClass1>(?x), <http://minCardFreshClass2>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Faculty>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#University>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Modern_ArtsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#ScienceStudent>(?x) :- <http://FreshClass16>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Chair>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Director>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#AcademicSubject>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Sports>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#UnofficialPublication>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Chair>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#DramaClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#GraduateStudent>(?x) :- <http://FreshClass21>(?x), <http://FreshClass6>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Chair>(?x) :- <http://FreshClass3>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Student>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#GraduateCourse>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Course>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Department>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Science>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ChemistryClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#subOrganizationOf>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Materical_Science_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Industry_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Organization>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ResearchGroup>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#HumanitiesAndSocial>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#EconomicsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#University>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Professor>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#AssociateProfessor>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#PeopleWithHobby>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://FreshClass27>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#GraduateCourse>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Research>(?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationResearch>(?x, ?y) .
+<http://FreshClass3>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Department>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#College>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#WomanCollege>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#BaseballFan>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Engineering>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Computer_EngineeringClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Faculty>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#PostDoc>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#SupportingStaff>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#ClericalStaff>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#SwimmingLover>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Medieval_ArtsClass>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#FineArts>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Performing_ArtsClass>(?x) .
+<http://FreshClass5>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y), <http://semantics.crl.ibm.com/univ-bench-dl.owl#College>(?y) .
+<http://FreshClass21>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#Publication>(?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#Specification>(?x) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#BasketBallFan>(?x) :- <http://FreshClass10>(?x), <http://semantics.crl.ibm.com/univ-bench-dl.owl#Person>(?x) .
+<RS_70>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y) .
+<RS_71>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y) .
+<RS_72>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y) .
+<RS_73>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) .
+<RS_74>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) .
+<RS_75>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y) .
+<RS_76>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y) .
+<RS_77>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) .
+<RS_78>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y) .
+<RS_79>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) .
+<RS_80>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y) .
+<INV_RS_79>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) .
+<RS_82>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y) .
+<INV_RS_73>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) .
+<INV_RS_78>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y) .
+<RS_73>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y) .
+<INV_RS_76>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y) .
+<RS_79>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) .
+<RS_86>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y) .
+<RS_87>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y) .
+<INV_RS_82>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y) .
+<INV_RS_76>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y) .
+<INV_RS_72>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y) .
+<RS_77>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) .
+<RS_74>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) .
+<RS_86>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y) .
+<INV_RS_73>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y) .
+<RS_71>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y) .
+<INV_RS_70>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y) .
+<INV_RS_87>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y) .
+<RS_76>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y) .
+<INV_RS_74>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) .
+<INV_RS_77>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) .
+<INV_RS_75>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y) .
+<INV_RS_77>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) .
+<INV_RS_74>(?x, ?y) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) .
+<INV_RS_79>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) .
+<INV_RS_80>(?x, ?y) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationDate>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationDate>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isAdvisedBy>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAdvisedBy>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#subOrganizationOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#subOrganizationOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#listedCourse>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#listedCourse>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#researchProject>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#researchProject>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_80>(?y, ?x) :- <RS_80>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationResearch>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationResearch>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliateOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliateOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#orgPublication>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#orgPublication>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teachingAssistantOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#subOrganizationOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#subOrganizationOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#researchProject>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#researchProject>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_82>(?y, ?x) :- <RS_82>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_87>(?y, ?x) :- <RS_87>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMajor>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareVersion>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareVersion>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_86>(?y, ?x) :- <RS_86>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationAuthor>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationAuthor>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_80>(?y, ?x) :- <INV_RS_80>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationResearch>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationResearch>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_78>(?y, ?x) :- <RS_78>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_79>(?y, ?x) :- <RS_79>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#tenured>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#tenured>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#orgPublication>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#orgPublication>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_72>(?y, ?x) :- <RS_72>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_73>(?y, ?x) :- <RS_73>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_70>(?y, ?x) :- <RS_70>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_71>(?y, ?x) :- <RS_71>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_82>(?y, ?x) :- <INV_RS_82>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_76>(?y, ?x) :- <RS_76>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliatedOrganizationOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliatedOrganizationOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_77>(?y, ?x) :- <RS_77>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationDate>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationDate>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareVersion>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareVersion>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_74>(?y, ?x) :- <RS_74>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_87>(?y, ?x) :- <INV_RS_87>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareDocumentation>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareDocumentation>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_RS_75>(?y, ?x) :- <RS_75>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_70>(?y, ?x) :- <INV_RS_70>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAdvisedBy>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isAdvisedBy>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationAuthor>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#publicationAuthor>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliateOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliateOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_79>(?y, ?x) :- <INV_RS_79>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#tenured>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#tenured>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#listedCourse>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#listedCourse>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#takesCourse>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_74>(?y, ?x) :- <INV_RS_74>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_73>(?y, ?x) :- <INV_RS_73>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_72>(?y, ?x) :- <INV_RS_72>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliatedOrganizationOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isAffiliatedOrganizationOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_78>(?y, ?x) :- <INV_RS_78>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?y, ?x) :- <INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_77>(?y, ?x) :- <INV_RS_77>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareDocumentation>(?y, ?x) :- <http://semantics.crl.ibm.com/univ-bench-dl.owl#softwareDocumentation>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_76>(?y, ?x) :- <INV_RS_76>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<RS_75>(?y, ?x) :- <INV_RS_75>(?x, ?y), <http://www.w3.org/2002/07/owl#NamedIndividual>(?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <RS_80>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y) :- <RS_80>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <RS_80>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y) :- <RS_80>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <RS_82>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y) :- <RS_82>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <RS_82>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y) :- <RS_87>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y) :- <RS_87>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) :- <RS_87>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y) :- <RS_86>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isFriendOf>(?x, ?y) :- <RS_86>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isHeadOf>(?x, ?y) :- <INV_RS_80>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y) :- <INV_RS_80>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <INV_RS_80>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <INV_RS_80>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <RS_78>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y) :- <RS_78>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <RS_78>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <RS_79>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <RS_79>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <RS_72>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y) :- <RS_72>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <RS_72>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y) :- <RS_73>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) :- <RS_73>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <RS_70>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y) :- <RS_70>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) :- <RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) :- <RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y) :- <RS_71>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasSameHomeTownWith>(?x, ?y) :- <RS_71>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <INV_RS_82>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <INV_RS_82>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasUndergraduateDegreeFrom>(?x, ?y) :- <INV_RS_82>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y) :- <RS_76>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y) :- <RS_76>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <RS_77>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <RS_77>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <RS_74>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) :- <RS_74>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) :- <RS_74>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <RS_74>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y) :- <INV_RS_87>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) :- <INV_RS_87>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isCrazyAbout>(?x, ?y) :- <INV_RS_87>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <RS_75>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y) :- <RS_75>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <RS_75>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <INV_RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#enrollIn>(?x, ?y) :- <INV_RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) :- <INV_RS_70>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) :- <INV_RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <INV_RS_70>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <INV_RS_79>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <INV_RS_79>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <INV_RS_74>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasStudent>(?x, ?y) :- <INV_RS_74>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <INV_RS_74>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isStudentOf>(?x, ?y) :- <INV_RS_74>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#love>(?x, ?y) :- <INV_RS_73>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#like>(?x, ?y) :- <INV_RS_73>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <INV_RS_72>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDoctoralDegreeFrom>(?x, ?y) :- <INV_RS_72>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <INV_RS_72>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasDegreeFrom>(?x, ?y) :- <INV_RS_78>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMasterDegreeFrom>(?x, ?y) :- <INV_RS_78>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasAlumnus>(?x, ?y) :- <INV_RS_78>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <INV_RS_77>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <INV_RS_77>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#teacherOf>(?x, ?y) :- <INV_RS_76>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#isTaughtBy>(?x, ?y) :- <INV_RS_76>(?x, ?y) .
+<http://semantics.crl.ibm.com/univ-bench-dl.owl#hasMember>(?x, ?y) :- <INV_RS_75>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#worksFor>(?x, ?y) :- <INV_RS_75>(?x, ?y) .
+<INV_http://semantics.crl.ibm.com/univ-bench-dl.owl#isMemberOf>(?x, ?y) :- <INV_RS_75>(?x, ?y) .
+<http://www.w3.org/2002/07/owl#Thing>(?x) :- <http://www.w3.org/2002/07/owl#NamedIndividual>(?x) .
+<http://www.w3.org/2002/07/owl#Nothing>(?x) :- <http://www.w3.org/2002/07/owl#differentFrom>(?x, ?x) .

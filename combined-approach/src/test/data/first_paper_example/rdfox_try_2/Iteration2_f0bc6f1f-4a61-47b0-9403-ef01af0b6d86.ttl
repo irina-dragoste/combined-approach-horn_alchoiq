@@ -1,0 +1,7 @@
+<Unnamed_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<Unnamed_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <Unnamed> .
+<Unnamed_1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.bike-example.ontology#A> .
+<Unnamed_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Thing> .
+<Unnamed_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <Unnamed> .
+<Unnamed_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.bike-example.ontology#B> .
+<Unnamed_2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.bike-example.ontology#D> .
