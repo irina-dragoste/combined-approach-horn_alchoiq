@@ -1,0 +1,2 @@
+This folder contains the output logs of our prototype and Konclude for the experiments described in the evaluation section of our paper.
+Each subfolder (*lubm*, *reactome*, *uniprot*, *uobm*) corresponds to the evaluated ontology partitions. It contains files with the experiment commands and output logs for Konclude reasoner (*-konclude.txt*) and our prototype impementation that uses RDFox (*-rdfox.txt*). It also contains a file summarizing the time performance of loading and reasoning for each tool (*-summarized.txt*).  
