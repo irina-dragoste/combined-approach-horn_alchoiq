@@ -1,20 +1,19 @@
-norm-paper_example.owl rdfox abox export.owl 4
+norm-paper_example.owl rdfox abox 4
 
 base: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\
 jar: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\materialize-windows-1.jar 
 ontos: d:\phd\env\combined-approach\KR\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\
 rdfox: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\LUBM\LUBM025
 abox: d:\phd\env\combined-approach\KR\ontos\ABoxes\LUBM\AcyReasoning\LUBM025\
-export D:\phd\env\combined-approach\KR\mat_experiments_RDFox\LUBM\LUBM025\export.owl
 cores: 4
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Uniprot
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Uniprot005
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot005" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot005" "Uniprot\Uniprot005\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot005" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot005" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot005" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot005" "Uniprot\Uniprot005\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot005" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot005" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl; Time: 2018-05-21 07:59:25.828156800
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -46,9 +45,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Uniprot010
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot010" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot010" "Uniprot\Uniprot010\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot010" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot010" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot010" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot010" "Uniprot\Uniprot010\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot010" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot010" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl; Time: 2018-05-21 08:06:54.676204200
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -80,9 +79,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Uniprot015
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot015" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot015" "Uniprot\Uniprot015\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot015" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot015" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot015" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot015" "Uniprot\Uniprot015\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot015" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot015" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl; Time: 2018-05-21 08:19:18.288874500
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -113,9 +112,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Uniprot020
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot020" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot020" "Uniprot\Uniprot020\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot020" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot020" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot020" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot020" "Uniprot\Uniprot020\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl" "Uniprot\Uniprot020" "..\ontos\ABoxes\Uniprot\AcyReasoning\Uniprot020" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Uniprot.owl; Time: 2018-05-21 08:32:23.950756300
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)

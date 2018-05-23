@@ -1,20 +1,19 @@
-norm-paper_example.owl rdfox abox export.owl 4
+norm-paper_example.owl rdfox abox 4
 
 base: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\
 jar: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\materialize-windows-1.jar 
 ontos: d:\phd\env\combined-approach\KR\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\
 rdfox: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\LUBM\LUBM025
 abox: d:\phd\env\combined-approach\KR\ontos\ABoxes\LUBM\AcyReasoning\LUBM025\
-export D:\phd\env\combined-approach\KR\mat_experiments_RDFox\LUBM\LUBM025\export.owl
 cores: 4
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Reactome
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Reactome020
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome020" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome020" "Reactome\Reactome020\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome020" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome020" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome020" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome020" "Reactome\Reactome020\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome020" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome020" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl; Time: 2018-05-21 08:51:00.648640
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -43,9 +42,9 @@ WARNING: All illegal access operations will be denied in a future release
  - materialization duration: 56219 ms
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Reactome040
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome040" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome040" "Reactome\Reactome040\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome040" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome040" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome040" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome040" "Reactome\Reactome040\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome040" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome040" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl; Time: 2018-05-21 10:32:51.153845600
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -75,9 +74,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Reactome060
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome060" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome060" "Reactome\Reactome060\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome060" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome060" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome060" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome060" "Reactome\Reactome060\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome060" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome060" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl; Time: 2018-05-21 10:39:08.100439400
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -107,9 +106,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Reactome080
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome080" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome080" "Reactome\Reactome080\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome080" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome080" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome080" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome080" "Reactome\Reactome080\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl" "Reactome\Reactome080" "..\ontos\ABoxes\Reactome\AcyReasoning\Reactome080" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_Reactome.owl; Time: 2018-05-21 10:43:50.544463200
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
