@@ -48,7 +48,11 @@ public class LaunchMaterialization {
 		final Integer nbThreads = Integer.valueOf(args[3]);
 
 		String exportToFolderLocation = null;
+
 		if (args.length > 4) {
+			/**
+			 * if present, the location where the facts inferred by materialisation will be exported.
+			 */
 			exportToFolderLocation = args[4];
 		}
 
@@ -68,7 +72,7 @@ public class LaunchMaterialization {
 	 * @param nbThreads
 	 *            Number of parallel threads to be used by RDFox.
 	 * @param exportToFolderLocation
-	 *            if not null, the location where the facts inferred by materialization will be exported.
+	 *            if not null, the location where the facts inferred by materialisation will be exported.
 	 *
 	 * @throws OWLOntologyCreationException
 	 * @throws IOException
