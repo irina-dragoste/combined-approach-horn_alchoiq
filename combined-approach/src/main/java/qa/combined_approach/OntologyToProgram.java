@@ -27,10 +27,21 @@ import qa.combined_approach.rules.HornAlchoiqAxiomType;
 import qa.combined_approach.rules.Rule;
 import uk.ac.manchester.cs.owl.owlapi.InternalizedEntities;
 
+/**
+ * Class that transforms ontology axioms to program rules.
+ *
+ * @author Irina Dragoste
+ *
+ */
 public class OntologyToProgram {
 
 	private final Program program;
 
+	/**
+	 * Transforms ontology axioms to program rules set.
+	 *
+	 * @param ontology
+	 */
 	public OntologyToProgram(final OWLOntology ontology) {
 
 		System.out.println("  - Creating program from ontology; Time: " + LocalDate.now() + " " + LocalTime.now());
@@ -46,7 +57,6 @@ public class OntologyToProgram {
 
 				namedIndividuals.forEach(namedIndividual -> {
 					program.getFacts().add(new Atom(Util.NAMED_PRED, namedIndividual));
-					// add rule NAMED_PRED to top
 				});
 			}
 		}
@@ -60,7 +70,7 @@ public class OntologyToProgram {
 		deriveRolesFromRoleSets();
 		/* N(?x) ->T(?x) . */
 		axiomatizeNamedIndividualToTop();
-		/* differentFrom(?x,?x) -> Bottom(?x) . */
+		/* owl:differentFrom(?x,?x) -> Bottom(?x) . */
 		axiomatizeDifferentFrom();
 
 		System.out.println("    #Tbox axioms: " + countTBoxAxioms(program.getCountAxiomsByType()));
@@ -85,14 +95,14 @@ public class OntologyToProgram {
 		return tboxCount;
 	}
 
-	/* (Role.1) */
+	/* Rule (Role.1) */
 	private void propagateInverseRoleSets() {
 		program.getActiveRoleConjunctions().getRoleConjunctionNames()
 				.forEach(roleConjunctionName -> program.getRules().add(createRulePropagateInverseRoleConjunction(roleConjunctionName)));
 	}
 
 	/**
-	 * (Role.1) <br>
+	 * Rule (Role.1) <br>
 	 * RoleConjunction(?x, ?y), N(?y) -> RoleConjunction^-(?y, ?x)
 	 *
 	 * @param roleConjunction
@@ -107,7 +117,7 @@ public class OntologyToProgram {
 		return propagateInverseRule;
 	}
 
-	/* (Role.2) */
+	/* Rule (Role.2) */
 	private void deriveRolesFromRoleSets() {
 		program.getActiveRoleConjunctions().getRoleConjunctionsByName().forEach((roleConjunctionName, roleConjunction) -> {
 			program.getRules().addAll(createRulesDeriveRolesFromRoleConjunction(roleConjunctionName, roleConjunction));
@@ -116,7 +126,7 @@ public class OntologyToProgram {
 	}
 
 	/**
-	 * (Role.2) <br>
+	 * Rule (Role.2) <br>
 	 * RoleConjunction(?x, ?y) -> Role^-(?x, ?y), forall Role in RoleConjunction
 	 *
 	 * @param roleConjunctionName
@@ -133,7 +143,7 @@ public class OntologyToProgram {
 		return rules;
 	}
 
-	/* (6.1) and (6.2) */
+	/* Rules (6.1) and (6.2) */
 	private void addRulesForRoleToSuperRolesClosure() {
 		/* for all properties in the TBox, and their inverses */
 		program.getSuperProperties().getSuperProperties().forEach((property, superPropertiesSet) -> {
@@ -150,7 +160,7 @@ public class OntologyToProgram {
 	}
 
 	/**
-	 * N(?x) ->T(?x) <br>
+	 * N(?x) ->T(?x) .<br>
 	 * We need to add this rule because (most of) the facts will not be processed trough java, but sent directly to RDFox in TTL files. For each named
 	 * individual a, the facts contain an assertion NamedIndividual(a).
 	 *
@@ -163,7 +173,7 @@ public class OntologyToProgram {
 	}
 
 	/**
-	 * differentFrom(?x,?x) -> Bottom(?x) .
+	 * owl:differentFrom(?x,?x) -> Bottom(?x) .
 	 */
 	private void axiomatizeDifferentFrom() {
 		final Rule ireflexiveDifferentFrom = new Rule(Converter.ConceptToAtom(InternalizedEntities.OWL_NOTHING, VAR_X),

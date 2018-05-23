@@ -36,10 +36,16 @@ import uk.ac.manchester.cs.owl.owlapi.InternalizedEntities;
 
 public class AxiomsToRules {
 
+	/**
+	 * Transforms given axiom to rules in the program. Some rules (2), (3.2), (4.2), (4.3) will be obtained iteratively during materialisation.
+	 *
+	 * @param axiom
+	 * @param program
+	 */
 	public static void collectRules(final OWLAxiom axiom, final Program program) {
 		/* transform some axioms to rules, some axioms we deal with later */
 		switch (axiom.getAxiomType().getName()) {
-			case "SubObjectPropertyOf": /* R sqs S */
+			case "SubObjectPropertyOf": /* axiom (6): R sqs S */
 				program.incrementAxiomCount(HornAlchoiqAxiomType.ROLE_SUBSUMPTION);
 
 				final OWLSubObjectPropertyOfAxiom subPropertyOfAxiom = (OWLSubObjectPropertyOfAxiom) axiom;
@@ -49,7 +55,7 @@ public class AxiomsToRules {
 				program.addPropertyAndItsInverse(subProperty);
 				program.addPropertyAndItsInverse(superProperty);
 
-				/* prepare for (6.1), (6.2) */
+				/* prepare for rules (6.1), (6.2) */
 				program.addPropertySubsumptionAndItsInverse(subProperty, superProperty);
 
 				break;
@@ -57,7 +63,7 @@ public class AxiomsToRules {
 				final OWLClassExpression subClass = ((OWLSubClassOfAxiom) axiom).getSubClass();
 				final OWLClassExpression superClass = ((OWLSubClassOfAxiom) axiom).getSuperClass();
 				switch (superClass.getClassExpressionType()) {
-					case OBJECT_ONE_OF: // Nominal
+					case OBJECT_ONE_OF: /* axiom (5): Nominal */
 						final OWLObjectOneOf nominals = (OWLObjectOneOf) superClass;
 						if (nominals.individuals().count() < 1) {
 							throw new CombinedApproachException("Unexpected T-box axiom of type:" + axiom.getAxiomType() + " :" + axiom);
@@ -67,7 +73,7 @@ public class AxiomsToRules {
 						}
 						nominals.individuals().forEach(individual -> {
 							program.incrementAxiomCount(HornAlchoiqAxiomType.NOMINAL);
-							/* (5): C(x) -> a = x. */
+							/* Rule (5): C(x) -> a = x. */
 							program.getRules().add(new Rule(new Atom(OWLRDFVocabulary.OWL_SAME_AS.toString(), IndividualToString(individual), VAR_X),
 									ConceptToAtom(subClass, VAR_X)));
 							/* N(a). */
@@ -75,7 +81,7 @@ public class AxiomsToRules {
 
 						});
 						break;
-					case OBJECT_MAX_CARDINALITY: /* C subseteq <=1 S.D */
+					case OBJECT_MAX_CARDINALITY: /* axiom (4): C subseteq <=1 S.D */
 						final OWLObjectMaxCardinality maxCardinality = (OWLObjectMaxCardinality) superClass;
 						final OWLClassExpression maxCardRange = maxCardinality.getFiller();
 						if (maxCardinality.getCardinality() < 1) {
@@ -89,15 +95,14 @@ public class AxiomsToRules {
 						final OWLObjectPropertyExpression maxCardProperty = maxCardinality.getProperty().getSimplified();
 						program.addPropertyAndItsInverse(maxCardProperty);
 
-						/* (4.4): D(y), R^-(y,x), C(x), R(x,z), D(z), N(z) -> y=z . */
+						/* Rule (4.1): D(y), R^-(y,x), C(x), R(x,z), D(z), N(z) -> y=z . */
 						program.getRules()
 								.add(new Rule(new Atom(OWLRDFVocabulary.OWL_SAME_AS.toString(), VAR_Y, VAR_Z),
 										new Atom[] { ConceptToAtom(maxCardRange, VAR_Y), PropertytoAtom(maxCardProperty.getInverseProperty(), VAR_Y, VAR_X),
 												ConceptToAtom(subClass, VAR_X), PropertytoAtom(maxCardProperty, VAR_X, VAR_Z),
 												ConceptToAtom(maxCardRange, VAR_Z), new Atom(Util.NAMED_PRED, VAR_Z) }));
-						// TODO optimisation
-						// max card nominal propagate rule is added only if you have nominals
-						/* (4.5): D(y), R^-(y,x), C(x), N(x) -> N(y) . */
+						// TODO optimisation: this rule is needed only if there are OBJECT_ONE_OF axioms in the TBox.
+						/* Rule (4.4): D(y), R^-(y,x), C(x), N(x) -> N(y) . */
 						program.getRules()
 								.add(new Rule(new Atom(Util.NAMED_PRED, VAR_Y),
 										new Atom[] { ConceptToAtom(maxCardRange, VAR_Y), PropertytoAtom(maxCardProperty.getInverseProperty(), VAR_Y, VAR_X),
@@ -105,7 +110,7 @@ public class AxiomsToRules {
 
 						program.addUnprocessedAxiom(HornAlchoiqAxiomType.AT_MOST_ONE, axiom);
 						break;
-					case OBJECT_MIN_CARDINALITY:
+					case OBJECT_MIN_CARDINALITY: /* axiom (2): C subseteq exists S.D */
 						final OWLObjectMinCardinality minCardinality = (OWLObjectMinCardinality) superClass;
 						final int cardinality = minCardinality.getCardinality();
 						if (cardinality > 1) {
@@ -120,7 +125,7 @@ public class AxiomsToRules {
 						}
 						/* ignore ontologies with axioms with cardinality <1 */
 						break;
-					case OBJECT_ALL_VALUES_FROM: /* C subseteq forall S.D */
+					case OBJECT_ALL_VALUES_FROM: /* axiom (3): (C subseteq forall S.D) equivalent with ( exists S.C subseteq D) */
 						program.incrementAxiomCount(HornAlchoiqAxiomType.FOR_ALL_ROLES_FROM_DOMAIN);
 						final OWLObjectAllValuesFrom allValsFrom = (OWLObjectAllValuesFrom) superClass;
 						final OWLClassExpression allValsFromRange = allValsFrom.getFiller();
@@ -128,7 +133,7 @@ public class AxiomsToRules {
 
 						program.addPropertyAndItsInverse(allValsFromProperty);
 
-						/* (3.1): S^-(x,y), C(y) -> D(x) . */
+						/* Rule (3.1): S^-(x,y), C(y) -> D(x) . */
 						program.getRules().add(new Rule(ConceptToAtom(allValsFromRange, VAR_X),
 								PropertytoAtom(allValsFromProperty.getInverseProperty(), VAR_X, VAR_Y), ConceptToAtom(subClass, VAR_Y)));
 
@@ -145,14 +150,14 @@ public class AxiomsToRules {
 						}
 						switch (subClass.getClassExpressionType()) {
 							case OBJECT_INTERSECTION_OF:
-							case OWL_CLASS: /* A1 cap ... cap An sqs B */
+							case OWL_CLASS: /* axiom (1): A1 cap ... cap An sqs B */
 								program.incrementAxiomCount(HornAlchoiqAxiomType.SUBSUME_CONCEPT_CONJUNCTION);
 								final List<OWLClassExpression> subClassConjuncts = new ArrayList<OWLClassExpression>(subClass.asConjunctSet());
 								final Atom[] intersectionAxiomBody = new Atom[subClassConjuncts.size()];
 								for (int i = 0; i < subClassConjuncts.size(); i++) {
 									intersectionAxiomBody[i] = ConceptToAtom(subClassConjuncts.get(i), VAR_X);
 								}
-								/* (1): A1(?x) , A2(?x), ... An(?x) -> B(?x) */
+								/* Rule (1): A1(x) , A2(x), ... An(x) -> B(?x) */
 								program.getRules().add(new Rule(ConceptToAtom(superClass, VAR_X), intersectionAxiomBody));
 
 								break;
@@ -175,10 +180,10 @@ public class AxiomsToRules {
 		final AxiomType<?> axiomType = axiom.getAxiomType();
 
 		if (AxiomType.ABoxAxiomTypes.contains(axiomType)) {
-			if (axiomType.equals(AxiomType.CLASS_ASSERTION)) {
+			if (axiomType.equals(AxiomType.CLASS_ASSERTION)) { /* axiom (7) */
 				program.incrementAxiomCount(HornAlchoiqAxiomType.CONCEPT_ASSERTION);
 				final OWLClassAssertionAxiom classAssertionAxiom = (OWLClassAssertionAxiom) axiom;
-				/* (7): class(individual) */
+				/* Rule (7): class(individual) */
 				program.getFacts().add(Converter.ConceptToAtom(classAssertionAxiom.getClassExpression(), classAssertionAxiom.getIndividual()));
 				namedIndividuals.add(IndividualToString(classAssertionAxiom.getIndividual()));
 
@@ -205,11 +210,11 @@ public class AxiomsToRules {
 					namedIndividuals.add(IndividualToString(firstIndividual));
 					namedIndividuals.add(IndividualToString(secondIndividual));
 				});
-			} else if (axiomType.equals(AxiomType.OBJECT_PROPERTY_ASSERTION)) {
+			} else if (axiomType.equals(AxiomType.OBJECT_PROPERTY_ASSERTION)) { /* axiom (*) */
 				program.incrementAxiomCount(HornAlchoiqAxiomType.ROLE_ASSERTION);
 				final OWLObjectPropertyAssertionAxiom propertyAssertionAxiom = (OWLObjectPropertyAssertionAxiom) axiom;
 				final OWLObjectPropertyExpression property = propertyAssertionAxiom.getProperty().getSimplified();
-				/* (8): property(subj,obj) . */
+				/* Rule (8): property(subj,obj) . */
 				program.getFacts().add(Converter.PropertytoAtom(property, propertyAssertionAxiom.getSubject(), propertyAssertionAxiom.getObject()));
 				namedIndividuals.add(IndividualToString(propertyAssertionAxiom.getObject()));
 				namedIndividuals.add(IndividualToString(propertyAssertionAxiom.getSubject()));
@@ -220,10 +225,22 @@ public class AxiomsToRules {
 
 	}
 
+	/**
+	 * Creates Atom owl:Thing(owlIndividual)
+	 *
+	 * @param owlIndividual
+	 * @return
+	 */
 	public static Atom assertIndividualInTop(final OWLIndividual owlIndividual) {
 		return Converter.ConceptToAtom(InternalizedEntities.OWL_THING, owlIndividual);
 	}
 
+	/**
+	 * Creates Atom owl:Thing(termName)
+	 *
+	 * @param termName
+	 * @return
+	 */
 	public static Atom assertIndividualInTop(final String termName) {
 		return Converter.ConceptToAtom(InternalizedEntities.OWL_THING, termName);
 	}

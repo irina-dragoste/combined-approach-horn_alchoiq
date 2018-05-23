@@ -20,12 +20,22 @@ public class RoleConjunction {
 		return roleSet.size() == 1;
 	}
 
-	// TODO get Inverse ....
-
+	/**
+	 * A unique role conjunction (i.e. set of role conjuncts) is identified by a unique name, in the form of an OWLObjectPropertyExpression. If a role
+	 * conjunction contains a single role, its name is that of the role. If one role conjunction is the inverse of another, its name is also the inverse
+	 * property of the other's name.
+	 *
+	 * @return
+	 */
 	public OWLObjectPropertyExpression getRoleName() {
 		return this.roleName;
 	}
 
+	/**
+	 * The set of role conjuncts that uniquely identify this role conjunction.
+	 *
+	 * @return
+	 */
 	public Set<OWLObjectPropertyExpression> getRoleSet() {
 		return this.roleSet;
 	}

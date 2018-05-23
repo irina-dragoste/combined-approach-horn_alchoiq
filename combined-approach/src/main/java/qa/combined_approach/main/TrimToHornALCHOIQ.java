@@ -25,10 +25,13 @@ import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 import qa.combined_approach.Util;
 
+/**
+ * Main class that removes non-Horn-ALCHOIQ axioms from an ontology in the normal form, and exports it in an OWL-XML format .
+ *
+ * @author Irina Dragoste
+ *
+ */
 public class TrimToHornALCHOIQ {
-
-	// private static String ontologyFilePath;
-	// private static String trimmedOntologyFolder;
 
 	public static void main(final String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException, FileNotFoundException {
 		final String ontologyFilePath = args[0];
@@ -37,6 +40,17 @@ public class TrimToHornALCHOIQ {
 		trimToHornALCHOIQ(ontologyFilePath, trimmedOntologyFolder);
 	}
 
+	/**
+	 * Removes non-Horn-ALCHOIQ axioms from an ontology in the normal form.
+	 *
+	 * @param ontologyFilePath
+	 *            ontology to be trimmed.
+	 * @param trimmedOntologyFolder
+	 *            folder where the trimmed ontology will be saved, in OWL-XML format.
+	 * @throws OWLOntologyCreationException
+	 * @throws OWLOntologyStorageException
+	 * @throws FileNotFoundException
+	 */
 	public static void trimToHornALCHOIQ(final String ontologyFilePath, final String trimmedOntologyFolder)
 			throws OWLOntologyCreationException, OWLOntologyStorageException, FileNotFoundException {
 		final File ontologyFile = new File(ontologyFilePath);
@@ -108,7 +122,17 @@ public class TrimToHornALCHOIQ {
 		return nonHornALCHOIQ;
 	}
 
-	/* Save to OWL XML FORMAT */
+	/**
+	 * Save given normalizedAxs to an ontology in OWL XML FORMAT at given file path.
+	 *
+	 * @param normalizedAxs
+	 *            axioms to be saved into an ontology
+	 * @param filePath
+	 *            ontology file path
+	 * @throws OWLOntologyStorageException
+	 * @throws FileNotFoundException
+	 * @throws OWLOntologyCreationException
+	 */
 	public static void saveAxiomsToOWLOntology(final Set<OWLAxiom> normalizedAxs, final String filePath)
 			throws OWLOntologyStorageException, FileNotFoundException, OWLOntologyCreationException {
 		final OWLOntologyManager manager = OWLManager.createOWLOntologyManager();

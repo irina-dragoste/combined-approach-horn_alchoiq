@@ -7,16 +7,29 @@ import java.util.Set;
 
 import org.semanticweb.owlapi.model.OWLObjectPropertyExpression;
 
+/**
+ * Class for computing the transitive closure of the reflexive super property relation.
+ *
+ * @author Irina Dragoste
+ *
+ */
 public class SuperProperties {
 
 	private final Map<OWLObjectPropertyExpression, Set<OWLObjectPropertyExpression>> superProperties = new HashMap<>();
 
+	/**
+	 * Gets the map containing as keys each property (and its inverse) occurring in the ontology TBox axioms, and as value the super properties of the key
+	 * property. Note that the super property relation is reflexive and transitive. It is inferred from axiom (6) - rules (6.1) and (6.2).
+	 *
+	 * @return
+	 */
 	public Map<OWLObjectPropertyExpression, Set<OWLObjectPropertyExpression>> getSuperProperties() {
 		return this.superProperties;
 	}
 
 	/**
-	 * Make sure property is simplified inside
+	 * Gets the super properties of given property. Note that the super property relation is reflexive and transitive. It is inferred from axiom (6) - rules
+	 * (6.1) and (6.2).
 	 *
 	 * @param property
 	 * @return
@@ -26,7 +39,7 @@ public class SuperProperties {
 	}
 
 	/**
-	 * Make sure properties are simplified
+	 * Each property occurring in the ontology TBox axioms is collected, as well as its inverse.
 	 *
 	 * @param objectPropertyExpression
 	 */
@@ -36,7 +49,7 @@ public class SuperProperties {
 	}
 
 	/**
-	 * Make sure properties are simplified
+	 * For each axiom of type (6), the sub and super properties are collected.
 	 *
 	 * @param subProperty
 	 * @param superProperty
@@ -47,7 +60,7 @@ public class SuperProperties {
 	}
 
 	/**
-	 * Computes the super propertes of all added properties. The superProperty relation is reflexive and transitive.
+	 * Computes the super properties of all added properties. The superProperty relation is reflexive and transitive.
 	 */
 	public void computeSuperProperties() {
 		computeTransitiveClosureOfPropertySubsumption();

@@ -8,6 +8,12 @@ import qa.combined_approach.rules.Query;
 import uk.ac.ox.cs.JRDFox.JRDFoxException;
 import uk.ac.ox.cs.JRDFox.store.DataStore.Format;
 
+/**
+ * Interface for the RDFox Data Store
+ * 
+ * @author Irina Dragoste
+ *
+ */
 public interface DataStoreInterface {
 
 	void importFiles(File... fileArray);

@@ -34,6 +34,12 @@ import qa.combined_approach.rules.Query;
 import qa.combined_approach.rules.Rule;
 import uk.ac.ox.cs.JRDFox.JRDFoxException;
 
+/**
+ * Class that implements the materialisation stage of the combined-approach to Horn-ALCHOIQ ontologies.
+ *
+ * @author Irina Dragoste
+ *
+ */
 public class Materialization {
 
 	private final File rdfoxInputLocation;
@@ -45,18 +51,21 @@ public class Materialization {
 	private long materializationDuration;
 	private long startMaterialization;
 
-	private final File exportLocation;
-
-	public Materialization(final File rdfoxInputLocation, final File aboxFolderLocation, final File exportLocation,
-			final DataStoreConfiguration dataStoreConfiguration, final Program program) {
+	public Materialization(final File rdfoxInputLocation, final File aboxFolderLocation, final DataStoreConfiguration dataStoreConfiguration,
+			final Program program) {
 		super();
 		this.rdfoxInputLocation = rdfoxInputLocation;
 		this.aboxFolderLocation = aboxFolderLocation;
-		this.exportLocation = exportLocation;
 		this.program = program;
 		this.dataStore = new RDFoxDataStoreWrapper(dataStoreConfiguration);
 	}
 
+	/**
+	 * Computes the materialisation, introducing rules when they are applicable (introducing unnamed individuals and role conjunctions on demand).
+	 *
+	 * @throws IOException
+	 * @throws JRDFoxException
+	 */
 	public void materialize() throws IOException, JRDFoxException {
 		// write Program to file
 		System.out.println("  - Writing program to files; Time: " + LocalDate.now() + " " + LocalTime.now());
@@ -85,15 +94,17 @@ public class Materialization {
 		boolean terminate = false;
 		int iterationCount = 0;
 		while (!terminate) {
-			// FIXME there are declaration (Class, ObjectProperty) that are counted as triples
 			final long initialTriples = this.dataStore.countTriples();
 			System.out.println("    - Iteration: " + iterationCount + "; Time: " + LocalDate.now() + " " + LocalTime.now() + ", #triples=" + initialTriples
 					+ ", #unnamedIndiv=" + program.getUnnamedIndividualNames().size());
 			iterationCount++;
 
+			/* Apply rules */
 			fireUntreatedAxioms(iterationCount);
+
 			this.dataStore.reason();
 
+			/* Terminate when no more facts are derived after an iteration. */
 			if (dataStore.countTriples() == initialTriples) {
 				System.out.println(" - Final #triples=" + initialTriples);
 				terminate = true;
@@ -102,15 +113,7 @@ public class Materialization {
 		this.materializationDuration = System.currentTimeMillis() - this.startMaterialization;
 		System.out.println(
 				"    Done materializing; Time: " + LocalDate.now() + " " + LocalTime.now() + "; materialization duration: " + materializationDuration + " ms");
-		// FIXME there are declaration (Class, ObjectProperty) that are counted as triples
 		this.generatedFactsCount = dataStore.countTriples();
-
-		///////////////////////////////////////////////////////////////////////////
-		// TODO remove this before experiments:
-		// System.out.println("Exporting facts to " + exportLocation);
-		// dataStore.export(exportLocation, Format.NTriples);
-		// System.out.println("Done .");
-		///////////////////////////////////////////////////////////////////////////
 
 		this.dataStore.dispose();
 	}
@@ -120,7 +123,8 @@ public class Materialization {
 		final File factsFile = createFactsFile(iteration);
 
 		final Set<OWLAxiom> existAxiomsToRemove = new HashSet<>();
-		/* (2) */
+
+		/* Rule (2) */
 		for (final OWLAxiom axiom : this.program.getUnprocessedAxioms(HornAlchoiqAxiomType.EXISTS)) {
 			/* remove exist axiom after you added the rule */
 			final boolean fired = fireExistentialAxiom((OWLSubClassOfAxiom) axiom, rulesFile, factsFile);
@@ -130,7 +134,7 @@ public class Materialization {
 		}
 		this.program.getUnprocessedAxioms(HornAlchoiqAxiomType.EXISTS).removeAll(existAxiomsToRemove);
 
-		/* (3.2) */
+		/* Rule (3.2) */
 		for (final OWLAxiom axiom : this.program.getUnprocessedAxioms(HornAlchoiqAxiomType.FOR_ALL_ROLES_FROM_DOMAIN)) {
 			fireAllRolesFromDomainAxiom((OWLSubClassOfAxiom) axiom, rulesFile, factsFile);
 		}
@@ -144,14 +148,10 @@ public class Materialization {
 			final Set<OWLObjectPropertyExpression> roleConjunctionsContainingRole = this.program.getActiveRoleConjunctions()
 					.getRoleConjunctionsContainingRole(property);
 
-			/* (4.1) */
-			// TODO
-			// fireAtMostAxiomPropagateRolesToNominal(domainC, property, rangeD, roleConjunctionsContainingRole, rulesFile, factsFile);
 			/* (4.2) */
-			// TODO check
-			fireAtMostAxiomFlip(domainC, rangeD, roleConjunctionsContainingRole, rulesFile);
-			/* (4.3) */
 			fireAtMostNewIndividual(domainC, rangeD, roleConjunctionsContainingRole, rulesFile, factsFile);
+			/* (4.3) */
+			fireAtMostAxiomFlip(domainC, rangeD, roleConjunctionsContainingRole, rulesFile);
 		}
 
 		this.dataStore.importFiles(new File[] { rulesFile, factsFile });
@@ -159,11 +159,11 @@ public class Materialization {
 	}
 
 	/**
-	 * (2): C(x) -> R(x,tD), D(tD), T(tD), U(tD)<br>
+	 * Rule (2): C(x) -> R(x,tD), D(tD), T(tD), U(tD)<br>
 	 * if there exists ?x in C(?x) :
 	 * <ul>
 	 * <li>create tD</li>
-	 * <li>the first time ts appears in the program, assert T(ts), U(ts), E(ts) for all E in s.</li>
+	 * <li>the first time tD appears in the program, assert T(tD), U(tD), D(tD).</li>
 	 * <li>add rule C(x) -> R(x, tD)</li>
 	 * </ul>
 	 * Once the existential axiom was fired, it can be removed, it does not need to fire twice.
@@ -210,7 +210,7 @@ public class Materialization {
 
 	/**
 	 * axiom: C subseteq forall S.D <br>
-	 * (3.2): C(x), SS(x, ts) -> SS(x, t{s,D}), T(t{s,D}), U(t{s,D}), X(t{s,D}) for all X in {s,D} <br>
+	 * Rule (3.2): C(x), SS(x, ts) -> SS(x, t{s,D}), T(t{s,D}), U(t{s,D}), X(t{s,D}) for all X in {s,D} <br>
 	 * for all role conjunctions SS containing property S.
 	 *
 	 * <br>
@@ -245,8 +245,7 @@ public class Materialization {
 			final Query existsUnnamed = new Query(VAR_Y, new Atom(Util.UNNAMED_PRED, VAR_Y), PropertytoAtom(roleConjunction, VAR_X, VAR_Y),
 					ConceptToAtom(domainC, VAR_X));
 			String existsSubstFilterQuery = existsUnnamed.toSPARQLQuery().replace("}", "");
-			// FIXME why not D?
-			// FIXME how do we avoid adding the same rule repeatedly?
+			// TODO avoid adding the same rule repeatedly
 			existsSubstFilterQuery += " FILTER NOT EXISTS {" + new Atom(rangeD.asOWLClass().toStringID(), VAR_Y).toTurtleAtom() + " }\n}";
 
 			final Set<String> oldUnnamedIndividuals = dataStore.answerSPARQLUnaryQuery(existsSubstFilterQuery);
@@ -266,26 +265,28 @@ public class Materialization {
 		}
 	}
 
-	// TODO check and complete javadoc
 	/**
 	 * axiom: C subseteq <1 R.D<br>
-	 * (4.2): D(y), RR^-(y,x), C(x), SS(x,ts), D(ts) -> X(y), {RR^-,SS^-}(y,x) for all X in s. <br>
+	 * Rule (4.3): D(y), RR^-(y,x), C(x), SS(x,ts), D(ts) -> X(y), {RR^-,SS^-}(y,x) for all X in s. <br>
 	 * for all role conjunctions RR and SS containing property R.<br>
 	 * <br>
 	 * For all RR, SS (R in RR and SS):
 	 * <ul>
 	 * <li>Query: ?z such that U(?z), D(?z), SS(?x,?z), C(?x), RR^-(?y,?x), D(?y) .</li>
-	 * <li>for each answer ts:</li>
+	 * <li>if there is at least one answer to the query, add rule U(?z), D(?z), SS(?x,?z), C(?x), RR^-(?y,?x), D(?y) -> {RR^-,SS^-}(y,x).</li>
+	 * <li>for each query answer ts:</li>
 	 * <ul>
-	 * <li>- .</li>
+	 * <li>- add rule D(y), RR^-(y,x), C(x), SS(x,ts), D(ts) -> X(y) for all X in s.</li>
 	 * </ul>
 	 * </ul>
 	 *
-	 * @param axiom
-	 *            C subseteq <1 R.D
+	 * @param domainC
+	 *            C
+	 * @param rangeD
+	 *            D
 	 * @param roleConjunctionsContainingRole
+	 *            RR, SS
 	 * @param rulesFile
-	 * @param factsFile
 	 * @throws IOException
 	 */
 	private void fireAtMostAxiomFlip(final OWLClassExpression domainC, final OWLClassExpression rangeD,
@@ -311,9 +312,7 @@ public class Materialization {
 					rsInverseRoleSet.addAll(sInverseRoleConjunction.getRoleSet());
 
 					final OWLObjectPropertyExpression rsInverseRoleConjunction = obtainRoleConjunction(rulesFile, rsInverseRoleSet);
-					/* U(?z), D(?z), SS(?x,?z), C(?x), RR^-(?y,?x), D(?y) -> {RR^-,SS^-}(y,x) -> {RR^-,SS^-}(y,x) */
-					// TODO actually the rule is U(?z), D(?z), SS(?x,?z), C(?x), RR^-(?y,?x), D(?y) -> {RR^-,SS^-}(y,x) added only once for each RR,SS
-					// combination.
+					/* U(?z), D(?z), SS(?x,?z), C(?x), RR^-(?y,?x), D(?y) -> {RR^-,SS^-}(y,x) . */
 					final Rule rolesRule = new Rule(PropertytoAtom(rsInverseRoleConjunction, VAR_Y, VAR_X),
 							new Atom[] { new Atom(Util.UNNAMED_PRED, VAR_Z), ConceptToAtom(rangeD, VAR_Z), PropertytoAtom(sRoleConjunction, VAR_X, VAR_Z),
 									ConceptToAtom(domainC, VAR_X), PropertytoAtom(rRoleConjunction.getInverseProperty(), VAR_Y, VAR_X),
@@ -321,7 +320,7 @@ public class Materialization {
 					Util.appendRuleToFile(rolesRule, rulesFile);
 
 					for (final String unnamedIndividual : unnamedIndividuals) {
-						// FIXME prevent adding this rule again and again for the same RR,SS and ts ?
+						// TODO prevent adding this rule again and again for the same RR,SS and ts
 
 						/* D(y), RR^-(y,x), C(x), SS(x,ts), D(ts) -> */
 						final Atom[] ruleBody = { ConceptToAtom(rangeD, VAR_Y), PropertytoAtom(rRoleConjunction.getInverseProperty(), VAR_Y, VAR_X),
@@ -340,10 +339,9 @@ public class Materialization {
 		}
 	}
 
-	// TODO continue javadoc
 	/**
 	 * axiom: C subseteq <1 R.D<br>
-	 * (4.3): C(x), RR(x, ta), D(ta), SS(x, tb), D(tb) -> {RR,SS}(x, t{a,b}), X(t{a,b}) for all X in {a,b}, T(t{a,b}), U(t{a,b}). <br>
+	 * Rule (4.2): C(x), RR(x, ta), D(ta), SS(x, tb), D(tb) -> {RR,SS}(x, t{a,b}), X(t{a,b}) for all X in {a,b}, T(t{a,b}), U(t{a,b}). <br>
 	 * for all role conjunctions RR and SS containing property R.<br>
 	 * <br>
 	 * For all RR, SS (R in RR and SS):
@@ -358,15 +356,18 @@ public class Materialization {
 	 * </ul>
 	 *
 	 * @param domainC
+	 *            C
 	 * @param rangeD
+	 *            D
 	 * @param roleConjunctionsContainingRole
+	 *            RR, SS
 	 * @param rulesFile
 	 * @param factsFile
 	 * @throws IOException
 	 */
 	private void fireAtMostNewIndividual(final OWLClassExpression domainC, final OWLClassExpression rangeD,
 			final Set<OWLObjectPropertyExpression> roleConjunctionsContainingRole, final File rulesFile, final File factsFile) throws IOException {
-		// FIXME prevent adding this rule again and again for the same RR,SS, ta and tb ?
+		// TODO prevent adding this rule again and again for the same RR,SS, ta and tb
 
 		for (final OWLObjectPropertyExpression rRoleConjunction : roleConjunctionsContainingRole) {
 			for (final OWLObjectPropertyExpression sRoleConjunction : roleConjunctionsContainingRole) {

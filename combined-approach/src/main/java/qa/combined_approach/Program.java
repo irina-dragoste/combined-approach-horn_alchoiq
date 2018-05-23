@@ -82,7 +82,7 @@ public class Program {
 
 	public void computeSuperProperties() {
 		superProperties.computeSuperProperties();
-		activeRoleConjunctions.computeActiveRoleConjunctions(superProperties);
+		activeRoleConjunctions.initializeActiveRoleConjunctions(superProperties);
 	}
 
 	/**

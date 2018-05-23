@@ -12,14 +12,14 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 public class CompareFacts {
 
 	/**
-	 * Returns true, if all the facts in a are contained in b
+	 * Returns true, if all the facts in a are contained in b.
 	 *
 	 * @param a
 	 * @param b
 	 * @return
 	 * @throws OWLOntologyCreationException
 	 */
-	public static void areAFactsContainedInB1(final File a, final File b) throws OWLOntologyCreationException {
+	public static void areAFactsContainedInBEquals(final File a, final File b) throws OWLOntologyCreationException {
 		final OWLOntology ontA = Util.loadOntologyWithImports(a);
 		final OWLOntology ontB = Util.loadOntologyWithImports(b);
 
@@ -34,6 +34,13 @@ public class CompareFacts {
 		// return allFound;
 	}
 
+	/**
+	 * Returns true, if all the facts in a are contained in b.
+	 *
+	 * @param a
+	 * @param b
+	 * @throws OWLOntologyCreationException
+	 */
 	public static void areAFactsContainedInB(final File a, final File b) throws OWLOntologyCreationException {
 		final OWLOntology ontA = Util.loadOntologyWithImports(a);
 		final OWLOntology ontB = Util.loadOntologyWithImports(b);

@@ -15,22 +15,65 @@ import qa.combined_approach.Util;
 import qa.combined_approach.dataStore.DataStoreConfiguration;
 import uk.ac.ox.cs.JRDFox.JRDFoxException;
 
+/**
+ * Main class that launches the Materialisation of our combined-approach propotype.
+ *
+ * @author Irina Dragoste
+ *
+ */
 public class LaunchMaterialization {
 
 	public static void main(final String[] args) throws OWLOntologyCreationException, IOException, JRDFoxException {
 
+		/**
+		 * Path to a Horn-ALCHOIQ OWL ontology with axioms in the normal form as discussed in the paper.
+		 */
 		final String ontoPath = args[0];
-		final String rdfoxInputLocation = args[1];
-		final String aboxFolderLocation = args[2];
-		final String exportFile = args[3];
-		final Integer nbThreads = Integer.valueOf(args[4]);
 
-		materialize(ontoPath, new File(rdfoxInputLocation), new File(aboxFolderLocation), new File(exportFile), nbThreads);
-		// materialize(ontoPath);
+		/**
+		 * Path to the folder where rules files and facts files will be generated, to be imported into RDFox.
+		 */
+		final String rdfoxInputLocation = args[1];
+
+		/**
+		 * Path to the folder where the ABox of the ontology is, in the form of several Turtle (.ttl) files. These files will be imported directly into RDFox,
+		 * without being processed trough Java. For each named individual in the ABox files, there is a class assertion to <code>owl:amedIndividual</code>
+		 * class.
+		 */
+		final String aboxFolderLocation = args[2];
+
+		/**
+		 * Number of parallel threads to be used by RDFox.
+		 */
+		final Integer nbThreads = Integer.valueOf(args[3]);
+
+		// String exportToFolderLocation = null;
+		// if (args.length > 4) {
+		// exportToFolderLocation = args[4];
+		// }
+
+		materialize(ontoPath, new File(rdfoxInputLocation), new File(aboxFolderLocation), nbThreads);
 	}
 
-	public static void materialize(final String ontoPath, final File rdfoxInputLocation, final File aboxFolderLocation, final File exportFile,
-			final int nbThreads) throws OWLOntologyCreationException, IOException, JRDFoxException {
+	/**
+	 *
+	 * @param ontoPath
+	 *            Path to a Horn-ALCHOIQ OWL ontology with axioms in the normal form as discussed in the paper.
+	 * @param rdfoxInputLocation
+	 *            Path to the folder where rules files and facts files will be generated, to be imported into RDFox.
+	 * @param aboxFolderLocation
+	 *            Path to the folder where the ABox of the ontology is, in the form of several Turtle (.ttl) files. These files will be imported directly into
+	 *            RDFox, without being processed trough Java. For each named individual in the ABox files, there is a class assertion to
+	 *            <code>owl:amedIndividual</code> class.
+	 * @param nbThreads
+	 *            Number of parallel threads to be used by RDFox.
+	 * 
+	 * @throws OWLOntologyCreationException
+	 * @throws IOException
+	 * @throws JRDFoxException
+	 */
+	public static void materialize(final String ontoPath, final File rdfoxInputLocation, final File aboxFolderLocation, final int nbThreads)
+			throws OWLOntologyCreationException, IOException, JRDFoxException {
 		// load
 		final long startTime = System.currentTimeMillis();
 		final DataStoreConfiguration dataStoreConfiguration = new DataStoreConfiguration();
@@ -42,40 +85,18 @@ public class LaunchMaterialization {
 		final Program program = ontologyToProgram.getProgram();
 
 		// materialize
-		final Materialization materialization = new Materialization(rdfoxInputLocation, aboxFolderLocation, exportFile, dataStoreConfiguration, program);
+		final Materialization materialization = new Materialization(rdfoxInputLocation, aboxFolderLocation, dataStoreConfiguration, program);
 		materialization.materialize();
 
 		final long loadingDuration = materialization.getStartMaterialization() - startTime;
 		final long materializationDuration = materialization.getMaterializationDuration();
-		// I would not get the turtle facts from RDFox (class, property)
-		final long generatedFactsCount = materialization.getGeneratedFactsCount();
 		final int numberOfUnnamedIndiv = program.getUnnamedIndividualNames().keySet().size();
 		final int numberOfActiveRoleConjunctions = program.getActiveRoleConjunctions().getRoleConjunctionNames().size();
-
-		// final Map<HornAlchoiqAxiomType, Integer> countAxiomsByType = program.getCountAxiomsByType();
-		// TODO print TBox axiom counts
-		// final String line = ontologyFileName + CSV_COMMA_DELIMITER + numberOfUnnamedIndiv + CSV_COMMA_DELIMITER + loadingDuration + CSV_COMMA_DELIMITER
-		// + materializationDuration + CSV_COMMA_DELIMITER + generatedFactsCount + CSV_COMMA_DELIMITER;
-		// Util.writeToFile(new File(materializationResultsFile), appendMetrics(line, countAxiomsByType, uniqueHeads), true);
 
 		System.out.println(" - #final active role conjunctions: " + numberOfActiveRoleConjunctions);
 		System.out.println(" - #Introduced Unnamed Individuals: " + numberOfUnnamedIndiv);
 		System.out.println(" - total loading   duration: " + loadingDuration + " ms");
 		System.out.println(" - materialization duration: " + materializationDuration + " ms");
-
 	}
-
-	// public static String appendMetrics(final String initialString, final Map<RoleConjunctionHornAlchoiqAxiomType, Integer> countAxiomsByType,
-	// final Set<ExistentialHead> uniqueExistentialHeads) throws IOException {
-	// final StringBuilder metricsLine = new StringBuilder(initialString);
-	// for (final RoleConjunctionHornAlchoiqAxiomType type : RoleConjunctionHornAlchoiqAxiomType.values()) {
-	// final Integer countPerAxiom = countAxiomsByType.getOrDefault(type, 0);
-	// metricsLine.append(countPerAxiom + CSV_COMMA_DELIMITER);
-	// }
-	// metricsLine.append(uniqueExistentialHeads.size());
-	// metricsLine.append(CSV_NEW_LINE_SEPARATOR);
-	//
-	// return metricsLine.toString();
-	// }
 
 }
