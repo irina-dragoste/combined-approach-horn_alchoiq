@@ -1,1 +1,0 @@
-<http://www.bike-example.ontology#t>(?x, <Unnamed_0>) :- <http://www.bike-example.ontology#A>(?x) .

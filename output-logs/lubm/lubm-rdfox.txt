@@ -1,17 +1,16 @@
-norm-paper_example.owl rdfox abox export.owl 4
+norm-paper_example.owl rdfox abox 4
 
 base: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\
 jar: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\materialize-windows-1.jar 
 ontos: d:\phd\env\combined-approach\KR\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\
 rdfox: D:\phd\env\combined-approach\KR\mat_experiments_RDFox\LUBM\LUBM025
 abox: d:\phd\env\combined-approach\KR\ontos\ABoxes\LUBM\AcyReasoning\LUBM025\
-export D:\phd\env\combined-approach\KR\mat_experiments_RDFox\LUBM\LUBM025\export.owl
 cores: 4
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 LUBM025
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM025" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM025" "LUBM\LUBM025\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM025" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM025" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM025" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM025" "LUBM\LUBM025\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM025" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM025" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl; Time: 2018-05-21 00:50:53.995614500
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -40,9 +39,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 LUBM050
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM050" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM050" "LUBM\LUBM050\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM050" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM050" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM050" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM050" "LUBM\LUBM050\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM050" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM050" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl; Time: 2018-05-21 00:50:05.930685500
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -70,9 +69,9 @@ WARNING: All illegal access operations will be denied in a future release
  - materialization duration: 13412 ms
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 LUBM075
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM075" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM075" "LUBM\LUBM075\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM075" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM075" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM075" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM075" "LUBM\LUBM075\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM075" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM075" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl; Time: 2018-05-21 00:48:17.074945700
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
@@ -102,9 +101,9 @@ WARNING: All illegal access operations will be denied in a future release
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 LUBM100
-java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM100" "D:\phd\env\combined-approach\KR\ontos\ABoxes\LUBM\AcyReasoning\LUBM100" "LUBM\LUBM100\export.owl" 4
+java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM100" "D:\phd\env\combined-approach\KR\ontos\ABoxes\LUBM\AcyReasoning\LUBM100" 4
 
-d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM100" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM100" "LUBM\LUBM100\export.owl" 4
+d:\phd\env\combined-approach\KR\mat_experiments_RDFox>java -jar materialize-windows-1.jar "..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl" "LUBM\LUBM100" "..\ontos\ABoxes\LUBM\AcyReasoning\LUBM100" 4
 Evaluating ontology: ..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl; Time: 2018-05-21 00:46:58.037863200
 WARNING: An illegal reflective access operation has occurred
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (rsrc:guice-4.1.0.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
