@@ -33,6 +33,7 @@ import qa.combined_approach.rules.HornAlchoiqAxiomType;
 import qa.combined_approach.rules.Query;
 import qa.combined_approach.rules.Rule;
 import uk.ac.ox.cs.JRDFox.JRDFoxException;
+import uk.ac.ox.cs.JRDFox.store.DataStore.Format;
 
 /**
  * Class that implements the materialisation stage of the combined-approach to Horn-ALCHOIQ ontologies.
@@ -50,14 +51,16 @@ public class Materialization {
 	private long generatedFactsCount;
 	private long materializationDuration;
 	private long startMaterialization;
+	private final String exportToFolderLocation;
 
 	public Materialization(final File rdfoxInputLocation, final File aboxFolderLocation, final DataStoreConfiguration dataStoreConfiguration,
-			final Program program) {
+			final Program program, final String exportToFolderLocation) {
 		super();
 		this.rdfoxInputLocation = rdfoxInputLocation;
 		this.aboxFolderLocation = aboxFolderLocation;
 		this.program = program;
 		this.dataStore = new RDFoxDataStoreWrapper(dataStoreConfiguration);
+		this.exportToFolderLocation = exportToFolderLocation;
 	}
 
 	/**
@@ -114,6 +117,11 @@ public class Materialization {
 		System.out.println(
 				"    Done materializing; Time: " + LocalDate.now() + " " + LocalTime.now() + "; materialization duration: " + materializationDuration + " ms");
 		this.generatedFactsCount = dataStore.countTriples();
+
+		// export results
+		if (exportToFolderLocation != null) {
+			dataStore.export(new File(exportToFolderLocation), Format.NTriples);
+		}
 
 		this.dataStore.dispose();
 	}

@@ -47,12 +47,12 @@ public class LaunchMaterialization {
 		 */
 		final Integer nbThreads = Integer.valueOf(args[3]);
 
-		// String exportToFolderLocation = null;
-		// if (args.length > 4) {
-		// exportToFolderLocation = args[4];
-		// }
+		String exportToFolderLocation = null;
+		if (args.length > 4) {
+			exportToFolderLocation = args[4];
+		}
 
-		materialize(ontoPath, new File(rdfoxInputLocation), new File(aboxFolderLocation), nbThreads);
+		materialize(ontoPath, new File(rdfoxInputLocation), new File(aboxFolderLocation), nbThreads, exportToFolderLocation);
 	}
 
 	/**
@@ -67,13 +67,15 @@ public class LaunchMaterialization {
 	 *            <code>owl:amedIndividual</code> class.
 	 * @param nbThreads
 	 *            Number of parallel threads to be used by RDFox.
-	 * 
+	 * @param exportToFolderLocation
+	 *            if not null, the location where the facts inferred by materialization will be exported.
+	 *
 	 * @throws OWLOntologyCreationException
 	 * @throws IOException
 	 * @throws JRDFoxException
 	 */
-	public static void materialize(final String ontoPath, final File rdfoxInputLocation, final File aboxFolderLocation, final int nbThreads)
-			throws OWLOntologyCreationException, IOException, JRDFoxException {
+	public static void materialize(final String ontoPath, final File rdfoxInputLocation, final File aboxFolderLocation, final int nbThreads,
+			final String exportToFolderLocation) throws OWLOntologyCreationException, IOException, JRDFoxException {
 		// load
 		final long startTime = System.currentTimeMillis();
 		final DataStoreConfiguration dataStoreConfiguration = new DataStoreConfiguration();
@@ -85,7 +87,8 @@ public class LaunchMaterialization {
 		final Program program = ontologyToProgram.getProgram();
 
 		// materialize
-		final Materialization materialization = new Materialization(rdfoxInputLocation, aboxFolderLocation, dataStoreConfiguration, program);
+		final Materialization materialization = new Materialization(rdfoxInputLocation, aboxFolderLocation, dataStoreConfiguration, program,
+				exportToFolderLocation);
 		materialization.materialize();
 
 		final long loadingDuration = materialization.getStartMaterialization() - startTime;
