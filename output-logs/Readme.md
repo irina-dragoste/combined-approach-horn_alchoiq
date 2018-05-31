@@ -6,21 +6,21 @@ The input files used in the evaluation are available at the following URL: https
 
 
 We have renamed the uploaded input files for better readability. 
-For example, for Konclude experiments, local file 'LUBM075_hornALCHOIQ.owl' in the output logs corresponds to 'lubm025.owl' in the Dropbox folder.
+For example, for Konclude experiments, local file *'LUBM075_hornALCHOIQ.owl'* in the output logs corresponds to *'lubm025.owl'* in the Dropbox folder.
 (More specifically, 
-'D:\phd\env\combined-approach\KR\ontos\merged_TboxABox\LUBM\LUBM025_hornALCHOIQ.owl' 
+*'D:\phd\env\combined-approach\KR\ontos\merged_TboxABox\LUBM\LUBM025_hornALCHOIQ.owl'* 
 corresponds to 
-combined-approach-horn_alchoiq/evaluation/input-files/Konclude/lubm/lubm025/lubm025.owl .)
+*combined-approach-horn_alchoiq/evaluation/input-files/Konclude/lubm/lubm025/lubm025.owl* .)
 
 For our combined-approach experiments using RDFox, the TBox and ABox are loaded separately, ABox being partitioned into multiple files in the same directory, to take advantage of RDFox's parallel capabilities.
-TBox local file 'normalized_minCard_manually_trimmed_LUBM.owl' in the output logs corresponds to 'lubm-TBox.owl' in the Dropbox folder.
-ABox local files folder 'LUBM025' in the output logs corresponds to 'lubm-ABox' in the Dropbox folder.
+TBox local file *'normalized_minCard_manually_trimmed_LUBM.owl'* in the output logs corresponds to *'lubm-TBox.owl'* in the Dropbox folder.
+ABox local files folder *'LUBM025*' in the output logs corresponds to *'lubm-ABox'* in the Dropbox folder.
 (More specifically, 
-'..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl'
+*'..\ontos\3_TBoxes_Normalized_minCard_Trimed_HornAlchoiq\normalized_minCard_manually_trimmed_LUBM.owl'*
 corresponds to  
-combined-approach-horn_alchoiq/evaluation/input-files/rdfox/lubm/lubm-TBox.owl
+*combined-approach-horn_alchoiq/evaluation/input-files/rdfox/lubm/lubm-TBox.owl*
 
 and
-'..\ontos\ABoxes\LUBM\AcyReasoning\LUBM025'
+*'..\ontos\ABoxes\LUBM\AcyReasoning\LUBM025'*
 corresponds to  
-combined-approach-horn_alchoiq/evaluation/input-files/rdfox/lubm/lubm-ABox/LUBM025 .)
+*combined-approach-horn_alchoiq/evaluation/input-files/rdfox/lubm/lubm-ABox/LUBM025* .)
