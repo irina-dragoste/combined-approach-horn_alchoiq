@@ -4,9 +4,11 @@ Each subfolder (*lubm*, *reactome*, *uniprot*, *uobm*) corresponds to the evalua
 
 The input files used in the evaluation, as well as the RDFox reasoner version used in the implementation, are available at the following URL: https://cloudstore.zih.tu-dresden.de/index.php/s/dXtg7iZd7SDbDaO.
 
-[//]: #old URL. 
-[//]: #https://www.dropbox.com/sh/w3otk3kn2lj04oy/AADbB9CwMCcdgZFou767vDbSa?dl=0.
-[//]: #TODO check files are the same in the new URL as in the old one
+[comment]: # (old URL.) 
+
+[comment]: # (https://www.dropbox.com/sh/w3otk3kn2lj04oy/AADbB9CwMCcdgZFou767vDbSa?dl=0.)
+
+[comment]: # (TODO check files are the same in the new URL as in the old one)
 
 
 We have renamed the uploaded input files for better readability. 
